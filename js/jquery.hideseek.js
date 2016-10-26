@@ -121,6 +121,8 @@
                 .prependTo($this.opts.list)
                 .text($this.opts.nodata);
 
+              $this.trigger('_after_nodata');
+
             }
 
           }
@@ -229,6 +231,7 @@ jQuery.fn.highlight=function(t){function e(t,i){var n=0;if(3==t.nodeType){var a=
 // Ignore accents
 String.prototype.removeAccents = function(enabled) {
   if (enabled) return this
+                      .replace(/[áàãâä]/gi,"a")
                       .replace(/[éè¨ê]/gi,"e")
                       .replace(/[íìïî]/gi,"i")
                       .replace(/[óòöôõ]/gi,"o")
